@@ -1,6 +1,5 @@
-/quiz/node_modules
-/quiz/.vscode
-/quiz/.angular/*
-/quiz/public/build
-/quiz/dist
-/quiz/build
+/node_modules/
+/public/build/
+
+.DS_Store
+.vscode/*
