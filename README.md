@@ -1,3 +1,3 @@
-# Quiz
+# Tab-Component
 
 Svelte
