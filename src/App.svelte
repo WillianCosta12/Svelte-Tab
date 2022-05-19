@@ -1,6 +1,6 @@
 <div class="main">
     <div class="App">
-        <Tabs></Tabs>
+        <Tabs ids={ids} contents={contents}></Tabs>
     </div>
 </div>
 
@@ -8,6 +8,20 @@
 import './assets/base.css';
 
 import Tabs from "./components/Tabs.svelte";
+
+    const contents = [
+        'Esse é o texto da Primeira Tab',
+        'Esse é o texto da Segunda Tab',
+        'Esse é o texto da Terceira Tab',
+        'Esse é o texto da Quarta Tab'
+    ]
+
+    const ids = [
+          "Tab-01",
+          "Tab-02",
+          "Tab-03",
+          "Tab-04"
+        ]
 
 </script>
 
@@ -26,4 +40,6 @@ import Tabs from "./components/Tabs.svelte";
     justify-content: center;
     overflow: hidden;
   }
+
+  
 </style>

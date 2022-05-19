@@ -2,25 +2,26 @@
 
 <div class="main">
     <div class="nav">
-        <button class="Tab01"  on:click={() =>onClick("0")}> Tab 01</button>
-        <button class="Tab02"  on:click={() =>onClick("1")}> Tab 02</button>
-        <button class="Tab03"  on:click={() =>onClick("2")}> Tab 03</button>
-        <button class="Tab04"  on:click={() =>onClick("3")}> Tab 04</button>
+      {#each ids as id, index}
+        <button class={id}  on:click={() =>onClick(index)}> {id}</button>
+      {/each}
     </div>
     <div class="outlet">
-        <Content state={aux}></Content>
+        <p>{contents[state]}</p>
     </div>
 </div>
 
 
 <script>
-    import Content from "./content.svelte";
+    let state = 0;
+    export let contents = []
+
+    export let ids = []
     
-        let aux = 0
         
-        function onClick(id) {
-            aux = id
-        }
+    function onClick(id) {
+        state = id
+    }
     
 </script>
 
@@ -53,6 +54,19 @@
   
   div.nav button:hover {
     background-color: rgba(219, 209, 209, 0.299);
+  }
+
+  .outlet {
+    width: 100%;
+    height: 180px;
+    padding: 1rem 1rem;
+    list-style: none;
+    cursor: pointer;
+    transition: all 0.7s;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+    background: #e1e8ec;
+    font-size: 25px;
   }
   
 </style>
